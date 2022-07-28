@@ -63,15 +63,15 @@
                         <div class="text-center">
                             <h5 class="mt-3 text-muted">Sign in with</h5>
                             <ul class="social-list list-inline mt-3 mb-0">
-                                {{-- <li class="list-inline-item">
+                                <li class="list-inline-item">
                                     <a href="{{route('login.facebook')}}" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
-                                </li> --}}
+                                </li>
                                  <li class="list-inline-item">
                                     <a href="{{route('login.google')}}" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
                                 </li>
-                                {{--<li class="list-inline-item">
+                                <li class="list-inline-item">
                                     <a href="{{route('login.github')}}" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
-                                </li> --}}
+                                </li>
                             </ul>
                         </div>
                     </div>

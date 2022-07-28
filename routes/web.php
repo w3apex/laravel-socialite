@@ -28,7 +28,7 @@ Route::get("login/facebook", [LoginController::class, "redirectToFacebook"])->na
 Route::get("login/facebook/callback", [LoginController::class, "handleFacebookCallback"]);
 
 //Github login
-Route::get("login/github", [LoginController::class, "redirectToGithub"])->name("login.facebook");
+Route::get("login/github", [LoginController::class, "redirectToGithub"])->name("login.github");
 Route::get("login/github/callback", [LoginController::class, "handleGithubCallback"]);
 
 // Route::get('/me', function () {

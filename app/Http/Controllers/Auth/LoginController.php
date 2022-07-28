@@ -50,12 +50,9 @@ class LoginController extends Controller
     // Google callback
     public function handleGoogleCallback()
     {
-        //$user = Socialite::driver('google')->user();
         $user = Socialite::driver('google')->stateless()->user();
-
         $this->_registerOrLoginUser($user);
 
-        // Return home after login
         return redirect()->route('dashboard.view');
     }
 
@@ -68,12 +65,10 @@ class LoginController extends Controller
     // Facebook callback
     public function handleFacebookCallback()
     {
-        $user = Socialite::driver('facebook')->user();
-
+        $user = Socialite::driver('facebook')->stateless()->user();
         $this->_registerOrLoginUser($user);
 
-        // Return home after login
-        return redirect()->route('home');
+        return redirect()->route('dashboard.view');
     }
 
     // Github login
@@ -85,12 +80,10 @@ class LoginController extends Controller
     // Github callback
     public function handleGithubCallback()
     {
-        $user = Socialite::driver('github')->user();
-
+        $user = Socialite::driver('github')->stateless()->user();
         $this->_registerOrLoginUser($user);
 
-        // Return home after login
-        return redirect()->route('home');
+        return redirect()->route('dashboard.view');
     }
 
     protected function _registerOrLoginUser($data)
@@ -104,7 +97,6 @@ class LoginController extends Controller
             $user->avatar = $data->avatar;
             $user->save();
         }
-
         Auth::login($user);
     }
 }
